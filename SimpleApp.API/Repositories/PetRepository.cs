@@ -8,9 +8,9 @@ namespace SimpleApp.API.Repositories
 {
     public class PetsRepository
     {
-        private readonly PetContext _context;
+        private readonly SimpleAppContext _context;
 
-        public PetsRepository(PetContext context)
+        public PetsRepository(SimpleAppContext context)
         {
             _context = context;
 

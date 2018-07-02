@@ -8,9 +8,9 @@ namespace SimpleApp.API.Repositories
 {
     public class ProductsRepository
     {
-        private readonly ProductContext _context;
+        private readonly SimpleAppContext _context;
 
-        public ProductsRepository(ProductContext context)
+        public ProductsRepository(SimpleAppContext context)
         {
             _context = context;
 

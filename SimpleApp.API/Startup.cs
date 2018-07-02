@@ -22,12 +22,16 @@ namespace SimpleApp.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //var connection = @"Data Source=(localdb)\MSSQLLocalDB;Database=SimpleAppDB;Trusted_connection=True;";
+            var connection = @"Data Source=DASCHOLL5520\SQLEXPRESS;Initial Catalog=SimpleAppDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
             services.AddScoped<ProductsRepository>();
-            services.AddDbContext<ProductContext>(opt => opt.UseInMemoryDatabase("ProductInventory"));
-
             services.AddScoped<PetsRepository>();
-            services.AddDbContext<PetContext>(opt => opt.UseInMemoryDatabase("PetInventory"));
 
+            //services.AddDbContext<SimpleAppContext>(opt => opt.UseInMemoryDatabase("simpleApp"));
+            services.AddDbContext<SimpleAppContext>(opt => opt.UseSqlServer(connection));
+
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSwaggerGen(c =>
