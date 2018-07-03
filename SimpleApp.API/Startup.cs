@@ -22,8 +22,8 @@ namespace SimpleApp.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //var connection = @"Data Source=(localdb)\MSSQLLocalDB;Database=SimpleAppDB;Trusted_connection=True;";
-            var connection = @"Data Source=DASCHOLL5520\SQLEXPRESS;Initial Catalog=SimpleAppDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            var connection = @"Data Source=(localdb)\MSSQLLocalDB;Database=SimpleAppDB;Trusted_connection=True;";
+            //var connection = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=SimpleAppDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             services.AddScoped<ProductsRepository>();
             services.AddScoped<PetsRepository>();
